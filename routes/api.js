@@ -27,7 +27,6 @@ router.delete('/todos/:id', (req, res, next) => {
   Todo.findByIdAndDelete({ "_id": req.params.id })
     .then(data => res.json(data))
     .catch(next)
-
 });
 
 module.exports = router;
