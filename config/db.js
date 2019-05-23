@@ -1,12 +1,10 @@
 const mongoose = require('mongoose');
 const config = require('./config.js');
-
-
-
+const conf = require('dotenv').config()
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(global.gConfig.DB, {
+    await mongoose.connect(conf.process.env.MONGODB, {
       useNewUrlParser: true,
       useCreateIndex: true
     })
@@ -14,9 +12,7 @@ const connectDB = async () => {
 
   } catch (err) {
     console.error(err.message)
-
     process.exit(1)
-
   }
 }
 

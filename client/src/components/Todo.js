@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
 import Input from './Input';
 import ListTodo from './ListTodo';
-
+require('dotenv').config()
 
 class Todo extends Component {
 
@@ -11,9 +10,12 @@ class Todo extends Component {
     todos: []
   }
 
+  
+
   componentDidMount() {
-    this.getTodos()
+    this.getTodos()    
   }
+
 
   getTodos = () => {
 

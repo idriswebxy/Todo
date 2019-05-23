@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const routes = require('./routes/api');
 const path = require('path');
 const connectDB = require('./config/db');
+const envs = require('envs');
+require('dotenv').load();
 
 
 const config = require('./config/config')
@@ -11,6 +13,8 @@ const config = require('./config/config')
 const app = express();
 
 connectDB();
+
+const port = process.env.PORT;
 
 
 
@@ -33,6 +37,6 @@ app.use((req, res, next) => {
 });
 
 
-app.listen(global.gConfig.PORT, () => {
-  console.log(`Server running on port ${global.gConfig.PORT}`)
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`)
 });
