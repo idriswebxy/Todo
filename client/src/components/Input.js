@@ -1,39 +1,36 @@
-import React, { Component } from 'react'
-import axios from 'axios';
-
+import React, { Component } from "react";
+import axios from "axios";
 
 export default class Input extends Component {
-
   state = {
-    action: ''
-  }
+    action: ""
+  };
 
   addTodo = () => {
-    const task = { action: this.state.action }
+    const task = { action: this.state.action };
 
     if (task.action && task.action.length > 0) {
-      axios.post('/api/todos', task)
+      axios
+        .post("/api/todos", task)
         .then(res => {
           if (res.data) {
             this.props.getTodos();
-            this.setState({ action: '' })
+            this.setState({ action: "" });
           }
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
     } else {
-      console.log("Input field required...")
+      console.log("Input field required...");
     }
-  }
+  };
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({
       action: e.target.value
-    })
-  }
-
+    });
+  };
 
   render() {
-
     let { action } = this.state;
 
     return (
@@ -41,6 +38,6 @@ export default class Input extends Component {
         <input type="text" onChange={this.handleChange} value={action} />
         <button onClick={this.addTodo}>Add Todo</button>
       </div>
-    )
+    );
   }
 }

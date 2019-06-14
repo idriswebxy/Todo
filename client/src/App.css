@@ -16,8 +16,7 @@ input {
   color: #787a80;
 }
 
-input:focus {
-  outline: none;
+input:focus {outline: none;
 }
 
 button {
