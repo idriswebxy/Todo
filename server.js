@@ -9,7 +9,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 mongoose
-  .connect("mongodb+srv://iman:root123@cluster0-a5nwz.mongodb.net/test?retryWrites=true", { useNewUrlParser: true })
+  .connect("", { useNewUrlParser: true })
   .then(() => console.log(`Database connected successfully`))
   .catch(err => console.log(err));
 
