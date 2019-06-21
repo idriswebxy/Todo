@@ -21,6 +21,7 @@
     "mongoose": "^5.6.0",
     "nodemon": "^1.19.1",
     "path": "^0.12.7",
+    "react-dev-utils": "^9.0.1",
     "routes": "^2.1.0"
   },
   "devDependencies": {}
