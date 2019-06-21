@@ -5,8 +5,6 @@ const routes = require("./routes/api");
 const path = require("path");
 require("dotenv").config();
 
-
-
 const app = express();
 
 const port = process.env.PORT || 5000;
@@ -27,15 +25,21 @@ app.use((req, res, next) => {
   next();
 });
 
-
 app.use(bodyParser.json());
-
 
 app.use("/api", routes);
 
 // app.use((req, res, next) => {
 //   res.send('Welcome to Express!');
 // });
+
+if (process.env.NODE_ENV === "production") {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, "client/build")));
+  app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "client/build", "index.html"));
+  });
+}
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}...`);
