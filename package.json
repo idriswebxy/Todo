@@ -6,10 +6,10 @@
   "scripts": {
     "start": "node server.js",
     "start-watch": "nodemon server.js",
-    "dev": "concurrently \"npm run start-watch\" \"cd client && npm start\"",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "dev": "concurrently \"npm run start-watch\" \"cd client && npm start\""
+   
   },
-  "author": "",
+  "author": "Idris",
   "license": "",
   "dependencies": {
     "axios": "^0.18.0",
