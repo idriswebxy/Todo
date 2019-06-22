@@ -29,9 +29,6 @@ app.use(bodyParser.json());
 
 app.use("/api", routes);
 
-// app.use((req, res, next) => {
-//   res.send('Welcome to Express!');
-// });
 
 if (process.env.NODE_ENV === "production") {
   // Serve any static files
