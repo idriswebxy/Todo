@@ -11,7 +11,7 @@ export default class Input extends Component {
 
     if (task.action && task.action.length > 0) {
       axios
-        .post("https://todo-001.herokuapp.com/api/todos", task)
+        .post("/api/todos", task)
         .then(res => {
           if (res.data) {
             this.props.getTodos();
