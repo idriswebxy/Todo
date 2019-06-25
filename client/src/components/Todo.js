@@ -28,7 +28,7 @@ class Todo extends Component {
 
   deleteTodo = id => {
     axios
-      .delete(`/api/todos${id}`)
+      .delete(`https://todo-001.herokuapp.com/api/todos${id}`)
       .then(res => {
         if (res.data) {
           this.getTodos();
